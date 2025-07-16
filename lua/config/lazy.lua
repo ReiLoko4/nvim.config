@@ -1,5 +1,4 @@
 -- Bootstrap lazy.nvim
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -19,8 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
 
 -- Setup lazy.nvim
 require('lazy').setup({
@@ -31,7 +28,7 @@ require('lazy').setup({
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
   --
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
+  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loade'd.
   --
 
   -- Alternatively, use `config = function() ... end` for full control over the configuration.
@@ -679,7 +676,7 @@ require('lazy').setup({
     end,
   },
 
-  { -- You can easily change to a different colorscheme.
+  --[[{ -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
@@ -699,7 +696,7 @@ require('lazy').setup({
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
     end,
-  },
+  }, --]]
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -814,3 +811,6 @@ require('lazy').setup({
     },
   },
 })
+
+vim.cmd 'colorscheme kanagawa-dragon'
+require 'config.keys'

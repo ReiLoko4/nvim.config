@@ -11,9 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Antes de inicar o lazy, vc precisa setar sua variavel <leader>.
+-- Nesse momento, coloquei como 'Espaço' 
+vim.g.mapleader = ' '
+
 require('lazy').setup {
   { import = 'plugins' },
-  { import = 'plugins.lsp' },
 }
 
 require 'config.keybinds'

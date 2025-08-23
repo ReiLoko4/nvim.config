@@ -1,7 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   event = 'BufRead',
-
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -23,8 +22,10 @@ return {
       },
     },
   },
-  options = function()
-    require 'lsp'
+  -- Se atente ao plugin spec do Lazy (https://lazy.folke.io/spec)
+  -- Não existe chave 'options'. Até existe 'opts', mas ela deve ser usada para configs que vc passaria dentro de
+  -- uma funcão 'setup'. Comece no simples com a funcao 'config'
+  config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -150,6 +151,10 @@ return {
           },
         },
       },
+      -- vc precisa listar aqui todos os servidores LSP que deseja usar.
+      -- o `ts_ls` é o LSP do typescript
+      -- vc consegue ver toda a lista de servidores digitando :h lspconfig-all
+      ts_ls = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
@@ -158,6 +163,11 @@ return {
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+    -- aqui é a funcao que está efetivamente ativando os LSPs configurados
+    -- por padrão, o mason-lspconfig já faz isso, então sua config deve
+    -- funcionar mesmo se vc deixar essa funcao simplesmente como
+    -- require('mason-lspconfig').setup({})
+    -- mas isso não é um problema
     require('mason-lspconfig').setup {
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
       automatic_installation = false,

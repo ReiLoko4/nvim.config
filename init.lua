@@ -15,6 +15,7 @@ vim.g.mapleader = ' '
 
 require('lazy').setup {
   { import = 'plugins' },
+  { import = 'plugins.lsp' },
 }
 
 require 'config.keybinds'
@@ -36,7 +37,7 @@ end)
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -59,5 +60,5 @@ vim.opt.smartcase = true
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
-
-vim.cmd 'colorscheme kanagawa-dragon'
+vim.opt.background = 'dark'
+vim.cmd.colorscheme 'kanagawa-dragon'

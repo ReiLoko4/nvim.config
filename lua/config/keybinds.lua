@@ -13,5 +13,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-_>', 'gcc', { remap = true, silent = true })
 
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<ESC>', ':nohlsearch<CR>', { noremap = true, silent = true })
+
 -- Handle terminal exit
 vim.keymap.set('t', '<esc>', '<C-\\><C-N>', { noremap = true, silent = true })

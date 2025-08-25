@@ -56,6 +56,7 @@ set.expandtab = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
+vim.o.ignorecase = true
 vim.opt.smartcase = true
 
 -- optionally enable 24-bit colour

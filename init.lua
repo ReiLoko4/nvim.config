@@ -18,7 +18,7 @@ require('lazy').setup {
   { import = 'plugins.lsp' },
 }
 
-require 'config.keybinds'
+require 'config.keymaps'
 
 local set = vim.opt
 

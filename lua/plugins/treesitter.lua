@@ -2,10 +2,12 @@ return {
   'nvim-treesitter/nvim-treesitter',
   lazy = false,
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs',
+  -- main = 'nvim-treesitter.configs',
+  -- config = function()
+  -- require('nvim-treesitter.install').prefer_git = false
+  -- require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
+  --require('nvim-treesitter.configs').setup {
   config = function()
-    require('nvim-treesitter.install').prefer_git = false
-    require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
     require('nvim-treesitter.configs').setup {
       auto_install = false,
       ensure_installed = {

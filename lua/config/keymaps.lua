@@ -5,7 +5,6 @@ vim.keymap.set({ 'n', 'v', 'i', 't' }, '<C-k>', mini_pick.builtin.files, { remap
 vim.keymap.set({ 'n', 'v', 'i', 't' }, '<C-p>', mini_pick.builtin.buffers, { remap = true, desc = 'Mini.pick buffers' })
 vim.keymap.set({ 'n', 'v', 'i', 't' }, '<C-l>', mini_files.open, { remap = true })
 
-
 -- Delete keys
 vim.keymap.set('n', 'd"', 'di"', { remap = true })
 vim.keymap.set('n', "d'", "di'", { remap = true, desc = 'delete' })
@@ -18,12 +17,12 @@ vim.keymap.set('n', "c'", "ci'", { remap = true })
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help  tags' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-_>', 'gcb', { remap = true, silent = true })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-/>', 'gcb', { remap = true, silent = true })
 
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Handle's
-vim.keymap.set('t', '<esc>', '<C-\\><C-N>', { noremap = true, silent = true })
+vim.keymap.set('t', '<ESC>', '<C-\\><C-N>', { noremap = true, silent = true })
 vim.keymap.set('n', '<ESC>', ':nohlsearch<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz<CR>', { remap = true, silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz<CR>', { remap = true, silent = true })

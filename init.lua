@@ -63,4 +63,4 @@ vim.o.smartcase = true
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
-vim.cmd.colorscheme 'kanagawa-dragon'
+vim.cmd.colorscheme 'evergarden'

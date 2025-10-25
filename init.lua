@@ -60,6 +60,9 @@ vim.opt.smartcase = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'number'
+
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'

@@ -6,7 +6,14 @@ vim.keymap.set('n', '<leader>b', mini_pick.builtin.buffers, { remap = true, desc
 vim.keymap.set('n', '<leader>g', mini_pick.builtin.grep)
 vim.keymap.set('n', '<leader>h', mini_pick.builtin.help)
 vim.keymap.set('n', '<leader>n', mini_files.open, { remap = true })
-
+vim.keymap.set('n', '<leader>m', function()
+  local bufname = vim.api.nvim_buf_get_name(0)
+  if bufname ~= '' and vim.fn.filereadable(bufname) == 1 then
+    mini_files.open(bufname)
+  else
+    mini_files.open()
+  end
+end, { remap = true })
 -- vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 --
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })

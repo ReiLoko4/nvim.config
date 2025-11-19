@@ -6,7 +6,12 @@ return {
     require('mini.move').setup()
     require('mini.diff').setup()
     require('mini.pairs').setup()
-    require('mini.files').setup()
+    require('mini.files').setup {
+      mappings = {
+        close = '<ESC>',
+        reset = 'q',
+      },
+    }
     require('mini.notify').setup()
     require('mini.comment').setup()
     require('mini.bracketed').setup()
